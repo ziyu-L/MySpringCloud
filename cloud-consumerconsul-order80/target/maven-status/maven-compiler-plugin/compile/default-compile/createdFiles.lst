@@ -1,0 +1,3 @@
+com\atspirit\springcloud\ConfigBean.class
+com\atspirit\springcloud\ConsulMain80.class
+com\atspirit\springcloud\controller\ConsulController.class
