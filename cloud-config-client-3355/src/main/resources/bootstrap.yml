@@ -1,0 +1,32 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: config-client
+  cloud:
+    #Config客户端配置
+    config:
+      label: dev #分支名称
+      name: config #配置文件名称
+      #      profile: prod #读取后缀名称  上述三者拼成：http://localhost:3344/master/config-dev.yml
+      profile: test #读取后缀名称  上述三者拼成：http://localhost:3344/master/config-dev.yml
+      #配置中心地址  因为现已经配置了config配置中心，所以我们现在client直接访问3344端口就能够获取到需要的信息
+      uri: http://localhost:3344
+  #RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#服务注册到Eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
